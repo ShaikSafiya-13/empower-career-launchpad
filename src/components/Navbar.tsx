@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import SignUpDialog from "./SignUpDialog";
 import { LogIn } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,16 +28,18 @@ const Navbar = () => {
     }`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
-            <span className="text-white font-bold text-lg">CL</span>
-          </div>
-          <span className="text-xl font-bold gradient-text">Career Launchpad</span>
+          <Link to="/" className="flex items-center gap-2">
+            <div className="h-9 w-9 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center">
+              <span className="text-white font-bold text-lg">CL</span>
+            </div>
+            <span className="text-xl font-bold gradient-text">Career Launchpad</span>
+          </Link>
         </div>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="#jobs" className="text-sm font-medium hover:text-brand-600 transition-colors">
+          <Link to="/jobs" className="text-sm font-medium hover:text-brand-600 transition-colors">
             Find Jobs
-          </a>
+          </Link>
           <a href="#training" className="text-sm font-medium hover:text-brand-600 transition-colors">
             Free Training
           </a>
